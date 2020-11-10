@@ -1,0 +1,42 @@
+// Example IDL file
+
+// namespace Anon.BankAccount;
+
+//enum Status:byte { Open, Closed, Frozen }
+
+//attribute accountOwner:string;
+
+// CREATE A SCHEMA, CONVERT TO READER FILE, USE TO STORE BANKACCOUNT "OBJECT" (MAPPED MEMORY) IN MEMORY, READ IN MEMORY AND SAVE TO DISK / AND MUTATE IN MEMORY
+// ADDRESS ALL COMMENTED OUT SCHEMA CODE
+
+// Array account = [checking, savings]
+
+/*
+table Checking {
+  accountID,
+  balance,
+  interestEarned,
+  InterestRate
+}
+*/
+
+table Savings {
+  accountID: short;
+  balance: long;
+  interestEarned: double;
+  InterestRate: double;
+  // paymentDueEpoch: long?;
+  //lastPaidEpoch: long?;
+}
+
+// boolean?
+// raw binary data - fingerprint ID??
+// dictionaries
+// array of structures
+
+// create string in memory (binary), modify it and then write it out from memory in binary and json
+
+// see if raw data grows in size (Steve)
+
+
+// try swift as well
