@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F07818212559B57100A67830 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F07818202559B57100A67830 /* main.c */; };
+		F07818212559B57100A67830 /* bankaccount.c in Sources */ = {isa = PBXBuildFile; fileRef = F07818202559B57100A67830 /* bankaccount.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,13 @@
 
 /* Begin PBXFileReference section */
 		F078181D2559B57100A67830 /* BankAccount */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BankAccount; sourceTree = BUILT_PRODUCTS_DIR; };
-		F07818202559B57100A67830 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		F07818202559B57100A67830 /* bankaccount.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bankaccount.c; sourceTree = "<group>"; };
+		F078183E2559D0C500A67830 /* bank_account_builder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank_account_builder.h; path = BankAccount/bank_account_builder.h; sourceTree = SOURCE_ROOT; };
+		F078183F2559D0C500A67830 /* flatbuffers_common_reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flatbuffers_common_reader.h; path = BankAccount/flatbuffers_common_reader.h; sourceTree = SOURCE_ROOT; };
+		F07818402559D0C500A67830 /* bank_account.fbs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bank_account.fbs; path = BankAccount/bank_account.fbs; sourceTree = SOURCE_ROOT; };
+		F07818412559D0C500A67830 /* bank_account_verifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank_account_verifier.h; path = BankAccount/bank_account_verifier.h; sourceTree = SOURCE_ROOT; };
+		F07818422559D0C500A67830 /* flatbuffers_common_builder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = flatbuffers_common_builder.h; path = BankAccount/flatbuffers_common_builder.h; sourceTree = SOURCE_ROOT; };
+		F07818432559D0C500A67830 /* bank_account_reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bank_account_reader.h; path = BankAccount/bank_account_reader.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,13 @@
 		F078181F2559B57100A67830 /* BankAccount */ = {
 			isa = PBXGroup;
 			children = (
-				F07818202559B57100A67830 /* main.c */,
+				F078183E2559D0C500A67830 /* bank_account_builder.h */,
+				F07818432559D0C500A67830 /* bank_account_reader.h */,
+				F07818412559D0C500A67830 /* bank_account_verifier.h */,
+				F07818402559D0C500A67830 /* bank_account.fbs */,
+				F07818422559D0C500A67830 /* flatbuffers_common_builder.h */,
+				F078183F2559D0C500A67830 /* flatbuffers_common_reader.h */,
+				F07818202559B57100A67830 /* bankaccount.c */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -118,7 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F07818212559B57100A67830 /* main.c in Sources */,
+				F07818212559B57100A67830 /* bankaccount.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

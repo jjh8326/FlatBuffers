@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../BankAccount/flatcc_headers/bank_account_builder.h">
+   </FileRef>
+   <FileRef
+      location = "group:../BankAccount/flatcc_headers/bank_account_reader.h">
+   </FileRef>
+   <FileRef
+      location = "group:../BankAccount/flatcc_headers/bank_account_verifier.h">
+   </FileRef>
+   <FileRef
+      location = "group:../BankAccount/flatcc_headers/flatbuffers_common_builder.h">
+   </FileRef>
+   <FileRef
+      location = "group:../BankAccount/flatcc_headers/flatbuffers_common_reader.h">
+   </FileRef>
+   <FileRef
       location = "self:BankAccount.xcodeproj">
    </FileRef>
 </Workspace>
