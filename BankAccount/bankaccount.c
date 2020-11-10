@@ -22,58 +22,44 @@ int accessBuffer(const void *buffer) {
 }
 
 int main() {
-    //Create flatcc builder object used to generate flat buffer
     flatcc_builder_t builder;
     void* buffer;
     size_t size;
+    
+    //Step 1. Create flatcc builder object used to generate flat buffer
     flatcc_builder_init(&builder);
     
-    //TODO: change to account number
-//    short bankAccountNumber = 1518;
-//    double accountBalance = 252.0;
-//    double interestEarned = 2.00;
-//    float interestRate = .001;
-    
-    int16_t bankAccountNumber = 1518;
-    int64_t accountBalance = 252.0;
+    //TODO: Add more fields to IDL file and make names the same
+    short bankAccountNumber = 1518;
+    double accountBalance = 252.0;
     double interestEarned = 2.00;
-    double interestRate = .001;
+    float interestRate = .001;
     
-    //Step 1. Set our builder - Call the method generated in our fbs file
-    Savings_ref_t savingsAccount = Savings_create_as_root(&builder, bankAccountNumber, accountBalance, interestRate, interestRate);
+    //Step 2. Create custom object using generate API call and store in builder
+    Savings_create_as_root(&builder, bankAccountNumber, accountBalance, interestRate, interestRate);
     
-    //Savings_ref_t savingsAccount = Savings_create_as_root(&builder, bankAccountNumber, accountBalance, interestRate, interestRate);
-    
-    //TODO: ...?
-    // ns(Monster_ref_t) orc = ns(Monster_create(B, ...));
-    // flatcc_builder_buffer_create(orc);
-    
-    //Step 2. Fill the buffer
+    //Step 3. Fill the flat buffer using builder
     buffer = flatcc_builder_finalize_aligned_buffer(&builder, &size);
     
-    //DEBUG - Access buffer
+    //DEBUG - Access flat buffer and savings data
     accessBuffer(buffer);
     
-    //Step 3. Align the buffer
+    //Step 3. Align the flat buffer
     flatcc_builder_aligned_free(buffer);
     
-    //DEBUG - Dump the buffer
+    //DEBUG - Dump the buffer to hex
     hexdump("Bank account hex", buffer, size, stdout);
     
-    //Step 4. Finalize the buffer
+    //Step 4. Finalize the flat buffer
     buffer = flatcc_builder_finalize_buffer(&builder, &size);
-    
-    //Step 5. Cleanup
     
     //Modify the buffer...?
     //You do not modify, you clear the buffer and create a new buffer.
     
-    //TODO: Move this?
-    //The builder can be reset which is faster than creating a new one
+    //Step 5. Free buffer and clear builder
     //flatcc_builder_reset(&builder);
-    
-    //buf = flatcc_builder_finalize_buffer(&builder, &size);
-    //flatcc_builder_clear(&builder);
+    flatcc_builder_free(buffer);
+    flatcc_builder_clear(&builder);
     
     return 0;
 }
