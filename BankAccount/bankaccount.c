@@ -11,11 +11,10 @@ int accessBuffer(const void *buffer) {
     //Make sure it is accessible
     test_assert(savingsAccount != 0);
     
-    printf("BUFFER NOT EMPTY\n");
-    
     int16_t bankAccountNumber = Savings_accountID(savingsAccount);
     //double interestEarned = Savings_interestEarned(savingsAccount);
     
+    //TODO: Access all savings account properties
     printf("Bank account number is: %u\n", bankAccountNumber);
     
     return 0;
