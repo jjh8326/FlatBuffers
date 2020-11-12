@@ -1,0 +1,19 @@
+// Example IDL file
+
+enum Status : byte { Open, Closed, Frozen }
+
+table Account {
+  accountID: short;
+  balance: float;
+  interestRate: double;
+  accountStatus: Status;
+}
+
+table AccountInformation {
+  owner: string;
+  platinumRewards: bool;
+  accounts: [Account];
+}
+
+//TODO:
+// - Binary data, dictionary
