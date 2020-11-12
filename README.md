@@ -1,6 +1,6 @@
 How to compile
 ---------------
-In command line run: gcc bankaccount.c -o bankaccount -I./flatcc/include flatcc/lib/libflatccrt.a -g
+In command line run: gcc bankAccountInformation.c -o bankAccountInformationDemo -I./flatcc/include flatcc/lib/libflatccrt.a -g
 
 
 How to recompile headers from FBS file
