@@ -20,7 +20,6 @@ int accessBuffer(const void *buffer) {
     return 0;
 }
 
-// TODO: Try Obj-c & Swift example
 int main() {
     flatcc_builder_t builder;
     void* buffer;
@@ -40,8 +39,6 @@ int main() {
     float checkingBalance = 252.0;
     double checkingInterestRate = .00001;
     int checkingStatus = 0;
-    
-    //TODO: If this doesn't work in the access method, might need multiple builders (it will probably work)
     
     //AccountDetails info
     flatbuffers_string_ref_t ownerName = flatbuffers_string_create_str(&builder, "John Smith"); //char[]'s are not supported, you must use the flatbuffers string
