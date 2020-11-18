@@ -6,19 +6,16 @@
 #define test_assert(x) do { if (!(x)) { assert(0); return -1; }} while(0)
 
 int accessBuffer(const void *buffer) {
-    //TODO: Uncomment this code and make it spit out all data supplied in main
-//    //Access the buffer
-//    //Savings_table_t savingsAccount = Savings_as_root(buffer);
-//    Account_mutable_table_t = savingsAccount = Account_as_root(buffer);
-//
-//    //Make sure it is accessible
-//    test_assert(savingsAccount != 0);
-//
-//    int16_t bankAccountNumber = Savings_accountID(savingsAccount);
-//    //double interestEarned = Savings_interestEarned(savingsAccount);
-//
-//    //TODO: Access all savings account properties
-//    printf("Bank account number is: %u\n", bankAccountNumber);
+    //Access the buffer
+    
+    AccountInformation_table_t accountInformation = AccountInformation_as_root(buffer);
+
+    //Make sure it is accessible
+    test_assert(accountInformation != 0);
+
+    //TODO: Access all accounts and their information
+    
+    printf("Accessed flat buffer!\n");
     
     return 0;
 }
@@ -68,8 +65,8 @@ int main() {
     //Step 3. Fill the flat buffer using builder
     buffer = flatcc_builder_finalize_aligned_buffer(&builder, &size);
 
-    //DEBUG - Access flat buffer and savings data
-    //accessBuffer(buffer);
+    //DEBUG - Access flat buffer data and print it
+    accessBuffer(buffer);
 
     //Step 3. Align the flat buffer
     flatcc_builder_aligned_free(buffer);
